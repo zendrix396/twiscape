@@ -2,6 +2,11 @@
 Extract relevant tweets in json format
 
 ---
+### Install the requirements
+```bash
+pip install -r requirements.txt
+```
+---
 ### Login to your account
 ```bash
 python main.py login
