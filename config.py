@@ -1,0 +1,11 @@
+SEARCH_QUERY = "open source"
+FROM_ACCOUNTS = ["dhh", "fireship_dev"]
+SINCE_DATE = "2024-01-01"
+UNTIL_DATE = None
+LANGUAGE = "en"
+RAW_DATA_FILENAME = "data.json"
+CLEANED_DATA_FILENAME = "cleaned_tweets.json"
+COOKIES_FILENAME = "cookies.json"
+LOGIN_URL = "https://x.com/login"
+MAX_TWEETS = 55
+MAX_EMPTY_SCROLLS = 3

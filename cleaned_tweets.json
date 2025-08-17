@@ -1,0 +1,362 @@
+[
+    {
+        "serial_no": 1,
+        "creator_name": "DHH",
+        "content": "Nothing mends a scuffle like working on code together! Open source bringing the love ✌️",
+        "media_url": null
+    },
+    {
+        "serial_no": 2,
+        "creator_name": "DHH",
+        "content": "@johncodezzz @hjanuschka There are always a million reasons for why you shouldn't do daring things. We choose to do them anyway, and believe in our ability to deal with whatever that entails. This isn't my first rodeo with open source development at tier-1 levels of criticality.",
+        "media_url": null
+    },
+    {
+        "serial_no": 3,
+        "creator_name": "DHH",
+        "content": "Next version of Omarchy will ship with a micro fork of Chromium that gives us live theme switching! Fantastic job by @hjanuschka to land this as omarchy-chromium-bin on the AUR. Open source is amazing 😍 https://t.co/lniqUqQZGE",
+        "media_url": "https://video.twimg.com/amplify_video/1955994931647942657/vid/avc1/1920x1080/h2SQCXiR1rQHz4tO.mp4?tag=21"
+    },
+    {
+        "serial_no": 4,
+        "creator_name": "DHH",
+        "content": "It's incredible how quickly open source can move when you set your mind to it. This bounty was posted just three days ago! Now we're setting up official Omarchy build servers to keep the mini-fork in sync with upstream. Gotta love X 🤘https://t.co/s82RQSmz0P",
+        "media_url": null
+    },
+    {
+        "serial_no": 5,
+        "creator_name": "DHH",
+        "content": "@halilozercan First step is to realize it doesn't just \"come across\" but that it \"is\". Anyway, I'm glad you like Omarchy. And I do like how open source can transcend differences and bring people together despite those.",
+        "media_url": null
+    },
+    {
+        "serial_no": 6,
+        "creator_name": "DHH",
+        "content": "@lovabler0gue Oh, I'm definitely having fun with it! And I'm also finding a deep resonance in writing open source software (Rails, Kamal, Hotwire, etc) on an open source operating system. One that I'm able to tailor to my preferences and purpose with as much care as I did Rails for Ruby.",
+        "media_url": null
+    },
+    {
+        "serial_no": 7,
+        "creator_name": "DHH",
+        "content": "This is what the Meaningful Burden looks like in open source! The sense of purpose you can derive by being part of a volunteer group of software pioneers. Clearing the path for folks further downstream who can't do that work. Putting your skills to use for a grand, greater good.",
+        "media_url": null
+    },
+    {
+        "serial_no": 8,
+        "creator_name": "DHH",
+        "content": "@RyanHiebert My recommendation would be that your open source project makes exactly zero socio-political statements.",
+        "media_url": null
+    },
+    {
+        "serial_no": 9,
+        "creator_name": "DHH",
+        "content": "Pulling politics out of open source really is the way to go. This whole \"everything is political\" nonsense is such a dead end for collaboration between people from all over the world.",
+        "media_url": null
+    },
+    {
+        "serial_no": 10,
+        "creator_name": "DHH",
+        "content": "Bam! This live-theme-switching-via-cli dream feature for Omarchy has landed on the Chromium code review tracker. Turn-around in less than a day! Still a walk before it's in a public release, but what an open source moment 😍 https://t.co/966ILx7uBV",
+        "media_url": null
+    },
+    {
+        "serial_no": 11,
+        "creator_name": "DHH",
+        "content": "Seven hours later, this bounty is close to being claimed. Open source + X = Amazing! https://t.co/2zoLLxreOp",
+        "media_url": null
+    },
+    {
+        "serial_no": 12,
+        "creator_name": "DHH",
+        "content": "@ai_vulcan @obsdmd @kepano They are the Apple Notes of Omarchy! Obsidian is included by default. I don't need everything to be open source. Just the platform itself 😄",
+        "media_url": null
+    },
+    {
+        "serial_no": 13,
+        "creator_name": "DHH",
+        "content": "@hjanuschka Freaking incredible. I love X and open source! And I love doing it for the XP, the glory, AND THE MONEY 😄. This is IKIGAI!",
+        "media_url": null
+    },
+    {
+        "serial_no": 14,
+        "creator_name": "DHH",
+        "content": "Open source is usually born out of building for yourself, but it's a lot more fun to build things together! It's a joy in and of itself to be able to create something from nothing with a merry band of fellow software enthusiasts. Consider this my formal invitation! https://t.co/IysNguOOAS",
+        "media_url": "https://video.twimg.com/amplify_video/1954462589368299522/vid/avc1/1920x1080/QGffRwKWzkG7rOhL.mp4?tag=21"
+    },
+    {
+        "serial_no": 15,
+        "creator_name": "DHH",
+        "content": "@jxn_w I don't want realism, I want ambition 😄. If it's open source, it must be doable.",
+        "media_url": null
+    },
+    {
+        "serial_no": 16,
+        "creator_name": "DHH",
+        "content": "Ask and thy shall receive! Laravel support added. Damn, isn't open source awesome? https://t.co/f1xUHnzGN3",
+        "media_url": null
+    },
+    {
+        "serial_no": 17,
+        "creator_name": "DHH",
+        "content": "How open source is chromium actually? Can anyone from not-Google get a patch into a new release? I desperately want programmatic live themeing, like \"chromium --theme='Cool grey'\" for Omarchy. Would pay a bounty!",
+        "media_url": null
+    },
+    {
+        "serial_no": 18,
+        "creator_name": "DHH",
+        "content": "@AtharvaPatwe @RealLudo237 Omarchy offers fantastic security because it's on Arch, which will always have the latest packages updated. And it offers unparalleled transparency because Linux is open source and BECAUSE Omarchy is just bash scripts. Your IT guy could vet the whole thing in an afternoon.",
+        "media_url": null
+    },
+    {
+        "serial_no": 19,
+        "creator_name": "DHH",
+        "content": "@SRCoachSauers It's open source. Send patches!",
+        "media_url": null
+    },
+    {
+        "serial_no": 20,
+        "creator_name": "DHH",
+        "content": "@odwyer_richard Amazing what gifts that have come from that attitude over those years, though! Ruby on Rails, Kamal, Hotwire, Omakub, Omarchy, and about a million other open source projects that are free and used by thousands. Wish more people woke up like me and shared in equal proportion 😄",
+        "media_url": null
+    },
+    {
+        "serial_no": 21,
+        "creator_name": "DHH",
+        "content": "Warms my open source heart to see someone make their first contribution. Could you imagine sending a PR to Microsoft to update the start menu? Or to Apple for toning down liquid glass? https://t.co/qS79erg7R6",
+        "media_url": "https://pbs.twimg.com/media/GxsnOndWYAE92K3.jpg"
+    },
+    {
+        "serial_no": 22,
+        "creator_name": "DHH",
+        "content": "@lazarosg_ Then you have an amazing Arch and Hyprland setup where all the code is open source and just done as basic bash. This isn't some black box or impenetrable C code. Have a look at the GitHub repo. You could figure this out.",
+        "media_url": null
+    },
+    {
+        "serial_no": 23,
+        "creator_name": "DHH",
+        "content": "@foolstechdev I'm making my ideal, personal computing environment and sharing it as an open source gift along the way. I don't need to monetize every contribution I make to the commons.",
+        "media_url": null
+    },
+    {
+        "serial_no": 24,
+        "creator_name": "DHH",
+        "content": "@devfaul I sleep 8 hours a night. That's how I have the energy and mental acuity  to keep improving open source at a rapid clip 😄",
+        "media_url": null
+    },
+    {
+        "serial_no": 25,
+        "creator_name": "DHH",
+        "content": "We're resetting this meme. It's now: I see you're running Arch? That's a distro for a man of culture. Good choice! What other meaningful burdens do you choose to carry in life? Are you active in open source? Are you a father? Oh, and is that Omarchy? Niiiice.",
+        "media_url": null
+    },
+    {
+        "serial_no": 26,
+        "creator_name": "DHH",
+        "content": "@briancoords More on the gift exchange here: https://t.co/mhPDt9lk3g",
+        "media_url": null
+    },
+    {
+        "serial_no": 27,
+        "creator_name": "DHH",
+        "content": "@PodOfTech I think I like capitalism AND the free gift exchange a little too much 😄 https://t.co/XTYl2w6bJ2",
+        "media_url": null
+    },
+    {
+        "serial_no": 28,
+        "creator_name": "DHH",
+        "content": "Problem with copying an existing commercial aesthetic or feel is that it reduces your appeal to the ideological (it's open source!) and price (it's better because it's free!). As marketing goes, that's a limited angle. We need to bring THE UNIQUE SIZZLE.",
+        "media_url": null
+    },
+    {
+        "serial_no": 29,
+        "creator_name": "DHH",
+        "content": "@aethrvmn I'm not a fan of GPLv3. https://t.co/XTYl2w6bJ2",
+        "media_url": null
+    },
+    {
+        "serial_no": 30,
+        "creator_name": "DHH",
+        "content": "AUR has 92,207 packages available!! This is Wikipedia-levels of contributions to mankind. 32,000 of those packages were updated in the last year. Mind blowing levels of open-source winning.",
+        "media_url": null
+    },
+    {
+        "serial_no": 31,
+        "creator_name": "DHH",
+        "content": "This was exactly my experience. Kinda kicking myself that I hadn't updated my mental model on desktop Linux for over a decade. But also just thrilled to finally fix it and enjoying this marvelous wonder of open source magic! https://t.co/ajr87rFBGO",
+        "media_url": null
+    },
+    {
+        "serial_no": 32,
+        "creator_name": "DHH",
+        "content": "@brionhickey I took advice from anyone with wisdom, I took open-source software from anyone who'd share, I took inspiration from anyone building something awesome.",
+        "media_url": null
+    },
+    {
+        "serial_no": 33,
+        "creator_name": "DHH",
+        "content": "It's ironic that developers on iOS in the US are now so much better off with payment processing choice than Android developers. Wasn't Google supposed to be the open one? The open-source one? Does Google really need to wait for a judge to tell them to do the right thing too?",
+        "media_url": null
+    },
+    {
+        "serial_no": 34,
+        "creator_name": "DHH",
+        "content": "@matiasbaldanza It's already happening: https://t.co/FR5nha2uRT",
+        "media_url": null
+    },
+    {
+        "serial_no": 35,
+        "creator_name": "DHH",
+        "content": "@zackkanter We've been focused on efficient operations, efficient development since day one. Whether it's building Ruby on Rails and a million other open source packages. Or it's ensuring we're not squandering money on cloud. There's a 20+ year record to look at here! It's working 😄",
+        "media_url": null
+    },
+    {
+        "serial_no": 36,
+        "creator_name": "DHH",
+        "content": "A lifestyle businesses that has yielded more money than I'd ever know what to do with, that's provided great employment for a fantastic remote team for decades, given customers superb, simple solutions, and the wider software community endless open source gifts!",
+        "media_url": null
+    },
+    {
+        "serial_no": 37,
+        "creator_name": "DHH",
+        "content": "@AlastairGrayson @higbee Yes, the great free Cloudflare tunnels for example. Or an insignificantly priced VPS somewhere running an open source tunnel. Complete nothing bugger. Like using a CDN.",
+        "media_url": null
+    },
+    {
+        "serial_no": 38,
+        "creator_name": "DHH",
+        "content": "Much of the delta in premium is software. But software is what open source does best. Imagine the five year on that comparison. You'd spend almost half a million dollars renting something you could have bought for $2,500. That's 168x more in this unfair comparison 😄",
+        "media_url": null
+    },
+    {
+        "serial_no": 39,
+        "creator_name": "DHH",
+        "content": "We're a small team working on Basecamp, HEY and its Calendar, ONCE, and new greenfield products at 37signals. Just ten Ruby programmers total. Doing all this product work plus a steady stream of new open source frameworks and tools. And we're now looking for a new product programmer to join the team.\n\nEveryone says that they only \"hire the best\", but by definition, most of them must be full of it. Less because they're lying, more because most companies just can't discern quality. That's what happens at feature factories: endless Jira tickets flow from non-technical product managers, and shipping something, anything against that backlog is all that matters.\n\nThat's not how we work at 37signals.\n\nWe don't actually have any dedicated middle managers. The day-to-day supervision of new team members is being done by other programmers serving as mentors, and by working together with designers to ship the cycle work.\n\nIn addition, we believe in the magic of just letting Managers of One do their job through long stretches of uninterrupted time. It's incredible how much progress you can make when your calendar isn't stuffed full of pointless meetings with pointy-haired bosses, and you get to collaborate with incredibly talented, passionate people who thrive on shipping great software.\n\nThat's what we care about here: great software. That means great for everyone. Great for customers, but also great for the programmers programming it and the designers designing it. Beautiful code. Making our own tools. Compressing complexity. It quickly gets corny, but craftsmanship and care of code still does exist in this world — it's not all just AI slop.\n\nInspired yet?\n\nhttps://t.co/xOdwXYfd4k",
+        "media_url": null
+    },
+    {
+        "serial_no": 40,
+        "creator_name": "DHH",
+        "content": "Not that everything is perfect — nothing ever is! But there's just a deep congruence in working for the web, with open source, and using a complete stack in that image. Of course, it helps that the tools are so good now! But it's living the ethos that makes me smile.",
+        "media_url": null
+    },
+    {
+        "serial_no": 41,
+        "creator_name": "DHH",
+        "content": "I guess what's new is that open source makers have now have a way to monetize with a proprietary cloud. Dangerous incentive. Everything rotten about the Nextjs drama is downstream for that.",
+        "media_url": null
+    },
+    {
+        "serial_no": 42,
+        "creator_name": "DHH",
+        "content": "@_basileus_ The fair price for open source is zero. They're certainly free to charge for support, though. We wouldn't be interested, but others might be.",
+        "media_url": null
+    },
+    {
+        "serial_no": 43,
+        "creator_name": "DHH",
+        "content": "I have reserved a special place in hell for open source projects that end up as enterprisey shakedowns. But at least we have the option to fork, like CINC just did! If you want to make commercial software, that's fine. But this bait'n'switch shit is nasty.",
+        "media_url": null
+    },
+    {
+        "serial_no": 44,
+        "creator_name": "DHH",
+        "content": "@dzhunev Common case with entitled open source gift receivers. Even a minimal amount of personal work can seem like too much when you can instead just demand that others dance to your tune.",
+        "media_url": null
+    },
+    {
+        "serial_no": 45,
+        "creator_name": "DHH",
+        "content": "\"Contrast this perspective to the resentment I occasionally see from open source developers. People who get sucked in by the ideal of pure altruism and pursue it, but are then disappointed by what they perceive as a lack of reciprocity after a while.\" https://t.co/mhPDt9kMdI",
+        "media_url": null
+    },
+    {
+        "serial_no": 46,
+        "creator_name": "DHH",
+        "content": "Some open source maintainers let ungrateful gift receivers get to them, and decide to stop sharing their work with the world. But there's also another way to deal with this kind of entitlement. Here's a vintage 2006 version. (Kamal had a release just last week!!). https://t.co/5WWFTwoJx1",
+        "media_url": "https://pbs.twimg.com/media/GlW6kwYWwAA7aUO.jpg"
+    },
+    {
+        "serial_no": 47,
+        "creator_name": "DHH",
+        "content": "People continue to be puzzled by the fact that open source runs as well as it does when analyzed as an economic transaction. But that's the wrong framing for many OSS contributors who see the burden as the prize.",
+        "media_url": null
+    },
+    {
+        "serial_no": 48,
+        "creator_name": "DHH",
+        "content": "@gabrielstuff It's not natural to need to interrogate the (frankly, boring, mainstream) political convictions of all your open source collaborators. That's a sickness, this search for ideological purity. And we ought to seek treatment, like \"no politics in this tech subreddit\".",
+        "media_url": null
+    },
+    {
+        "serial_no": 49,
+        "creator_name": "DHH",
+        "content": "@branditmanaged They don't get any data when you run the open source model locally, Bran.",
+        "media_url": null
+    },
+    {
+        "serial_no": 50,
+        "creator_name": "DHH",
+        "content": "@konstruktors That's right. You can't make derivative products from the source. These are not open source products. They're source available products that you're licensed to modify for personal use.",
+        "media_url": null
+    },
+    {
+        "serial_no": 51,
+        "creator_name": "DHH",
+        "content": "I wrote about the crazy tactics employed by Automattic when this whole debacle started with the 8% revenue shakedown: https://t.co/2em0wkIC7H",
+        "media_url": null
+    },
+    {
+        "serial_no": 52,
+        "creator_name": "Fireship",
+        "content": "@dennisivy11 I  don't just let anyone sponsor a 100 second video, the project must be\n\n1. Free, open-source, self-hostable \n2. A tool I  have experience with (mentioned Appwrite in several past videos) https://t.co/4lwo9Jabzl",
+        "media_url": "https://pbs.twimg.com/media/GafcgPfXAAAx8Ja.png"
+    },
+    {
+        "serial_no": 53,
+        "creator_name": "DHH",
+        "content": "@chrisabruce @photomatt I choose to see it as an open hand. Matt has 20 years of service in the open source world. I remain hopeful that compelling arguments can change minds.",
+        "media_url": null
+    },
+    {
+        "serial_no": 54,
+        "creator_name": "DHH",
+        "content": "\"The open source spirit: To let a billion lemons go unsqueezed. To capture vanishingly less than you create. To marvel at a vast commons of software, offered with no strings attached, to any who might wish to build.\" https://t.co/69iC78Z1TS",
+        "media_url": null
+    },
+    {
+        "serial_no": 55,
+        "creator_name": "DHH",
+        "content": "@martinfowler Oh, I didn't take it in any ill will at all. Just wanted to point out that I do think commercial interests and open source \"capture far less than you create\" ethics ARE compatible! I see that all around me, including from people much higher than I ✌️",
+        "media_url": null
+    },
+    {
+        "serial_no": 56,
+        "creator_name": "DHH",
+        "content": "@martinfowler While I haven't captured half a trillion dollars to my personal bank account, I'd consider myself a rich software entrepreneur! And I don't see a conflict between success in business and making open source that creates vast amounts of uncaptured value. https://t.co/XTYl2w5DTu",
+        "media_url": null
+    },
+    {
+        "serial_no": 57,
+        "creator_name": "DHH",
+        "content": "\"Matt, don't turn into a mad king. I hold your work on WordPress in the highest esteem. And I recognize the temptation of gratitude grievances. But that must remain a moral critique, not a commercial crusade.\" https://t.co/YcRN31M2RA",
+        "media_url": null
+    },
+    {
+        "serial_no": 58,
+        "creator_name": "DHH",
+        "content": "This is totally crazy. Like if the operators of rubygems dot org just decided to expropriate the official Rails gems, hand over control to a new team, and lock the core team out of it. We're in uncharted and dangerous territory for open source now. What a sad sight.",
+        "media_url": null
+    },
+    {
+        "serial_no": 59,
+        "creator_name": "DHH",
+        "content": "@photomatt I have nothing but the out-most respect for what you've built with WordPress. It's an incredible achievement, and you're been justly rewarded for that accomplishment. No need to squeeze the lemon that hard. It's undermining open source as a whole.",
+        "media_url": null
+    },
+    {
+        "serial_no": 60,
+        "creator_name": "DHH",
+        "content": "\"That's the deal. That's open source. I give you a gift of code, you accept the terms of the license. There cannot be a second set of shadow obligations that might suddenly apply, if you strike it rich using the software. Then the license is meaningless.\" https://t.co/2em0wkIC7H",
+        "media_url": null
+    }
+]
