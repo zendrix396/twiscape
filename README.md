@@ -1,5 +1,5 @@
 ## Twiscape
-extract relevant tweets in json format
+Extract relevant tweets in json format
 
 ---
 ### Login to your account
