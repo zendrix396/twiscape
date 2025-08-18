@@ -2,6 +2,9 @@
 Extract relevant tweets in json format
 
 ---
+### Configure Browser
+You can go to `auth.py` and `scraper.py` and replace the `.Firefox' instance with your required browser like `Edge' or 'Chrome'
+---
 ### Install the requirements
 ```bash
 pip install -r requirements.txt
