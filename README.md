@@ -17,6 +17,15 @@ pip install -r requirements.txt
 python main.py login
 ```
 >It will ask for username and password, add the correct information and a new `cookie.json` file will be created that will help with persistence sessions.
+>It might throw some error sometimes when using headless settings, to fix it you can comment out these 3 lines and it will work just fine.
+
+```python
+# auth.py
+        comment them
+        # options.add_argument("--headless")
+        # options.add_argument("--disable-gpu")
+        # options.add_argument("--no-sandbox")
+```
 ---
 ### Customizing your query
 
@@ -42,3 +51,4 @@ Run this command to start the scraping process
 ```bash
 python main.py scrape
 ```
+
