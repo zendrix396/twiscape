@@ -3,49 +3,44 @@ from urllib.parse import quote
 import config
 from database import TweetDatabase
 
-def build_search_url():
-    """Builds a valid X.com search URL from the configuration variables."""
+def build_search_url(job_config):
+    """Builds a valid X.com search URL from a job configuration dictionary."""
     query_parts = []
     
-    if config.SEARCH_QUERY:
-        query_parts.append(config.SEARCH_QUERY)
+    if job_config.get("search_query"):
+        query_parts.append(job_config["search_query"])
     
-    if config.FROM_ACCOUNTS:
-        from_string = " OR ".join([f"from:{account}" for account in config.FROM_ACCOUNTS])
+    if job_config.get("from_accounts"):
+        from_string = " OR ".join([f"from:{account}" for account in job_config["from_accounts"]])
         query_parts.append(f"({from_string})")
     
-    if config.SINCE_DATE:
-        query_parts.append(f"since:{config.SINCE_DATE}")
-    if config.UNTIL_DATE:
-        query_parts.append(f"until:{config.UNTIL_DATE}")
+    if job_config.get("since_date"):
+        query_parts.append(f"since:{job_config['since_date']}")
+    if job_config.get("until_date"):
+        query_parts.append(f"until:{job_config['until_date']}")
         
-    if config.LANGUAGE:
-        query_parts.append(f"lang:{config.LANGUAGE}")
+    language = job_config.get("language", "en")
+    query_parts.append(f"lang:{language}")
         
     raw_query = " ".join(query_parts)
-    if not raw_query:
-        raise ValueError("Search configuration is empty. Please set SEARCH_QUERY or FROM_ACCOUNTS.")
+    if not raw_query.strip():
+        raise ValueError("Search configuration is empty.")
         
     encoded_query = quote(raw_query)
     
     return f"https://x.com/search?q={encoded_query}&src=typed_query&f=live"
 
-def process_and_append_tweets(raw_data_filename):
+def process_raw_data(raw_data_filename: str):
     """
-    Processes the raw data and stores cleaned tweets in the SQLite database.
+    Processes the raw data file and returns a list of cleaned tweet dictionaries.
+    This function no longer interacts with the database.
     """
-    # Initialize database connection
-    db = TweetDatabase()
-    
-    # Get the current highest serial number
-    start_sno = db.get_latest_serial_no() + 1
-
     try:
         with open(raw_data_filename, 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"❌ Error: Could not read or parse '{raw_data_filename}': {e}")
-        return 0
+        return []
 
     newly_cleaned_tweets = []
     try:
@@ -56,10 +51,10 @@ def process_and_append_tweets(raw_data_filename):
                 entries.extend(instruction.get('entries', []))
         if not entries:
             print("⚠️ No tweet entries found in the expected format in the latest data.")
-            return 0
+            return []
     except (KeyError, IndexError, TypeError) as e:
         print(f"❌ Error: Could not find tweet entries in the expected format: {e}")
-        return 0
+        return []
 
     for entry in entries:
         if "tweet-" not in entry.get('entryId', ''):
@@ -71,10 +66,6 @@ def process_and_append_tweets(raw_data_filename):
             # Extract tweet ID from entryId
             tweet_id = entry.get('entryId', '').replace('tweet-', '')
             
-            # Skip if tweet already exists in database
-            if db.tweet_exists(tweet_id):
-                continue
-
             # Extract user info
             user_result = tweet_result['core']['user_results']['result']
             creator_name = user_result['core']['name']
@@ -113,7 +104,7 @@ def process_and_append_tweets(raw_data_filename):
 
             newly_cleaned_tweets.append({
                 "tweet_id": tweet_id,
-                "serial_no": start_sno + len(newly_cleaned_tweets),
+                # serial_no will be handled by the single db writer process
                 "creator_name": creator_name,
                 "creator_username": creator_username,
                 "content": content_text.strip(),
@@ -127,11 +118,5 @@ def process_and_append_tweets(raw_data_filename):
         except (KeyError, IndexError, TypeError) as e:
             print(f"⚠️ Skipping malformed tweet entry: {e}")
             continue
-
-    if newly_cleaned_tweets:
-        inserted_count = db.insert_tweets_batch(newly_cleaned_tweets)
-        print(f"✅ Processed and stored {inserted_count} new tweets in database")
-        return inserted_count
-    else:
-        print("✅ No new tweets to store in this batch.")
-        return 0
+    
+    return newly_cleaned_tweets
