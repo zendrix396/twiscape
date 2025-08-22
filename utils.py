@@ -1,6 +1,7 @@
 import json
 from urllib.parse import quote
 import config
+from database import TweetDatabase
 
 def build_search_url():
     """Builds a valid X.com search URL from the configuration variables."""
@@ -29,16 +30,15 @@ def build_search_url():
     
     return f"https://x.com/search?q={encoded_query}&src=typed_query&f=live"
 
-def process_and_append_tweets(raw_data_filename, cleaned_output_filename):
+def process_and_append_tweets(raw_data_filename):
     """
-    Processes the raw data and appends cleaned tweets to the output file.
+    Processes the raw data and stores cleaned tweets in the SQLite database.
     """
-    try:
-        with open(cleaned_output_filename, 'r', encoding='utf-8') as f:
-            existing_cleaned_tweets = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        existing_cleaned_tweets = []
-    start_sno = len(existing_cleaned_tweets) + 1
+    # Initialize database connection
+    db = TweetDatabase()
+    
+    # Get the current highest serial number
+    start_sno = db.get_latest_serial_no() + 1
 
     try:
         with open(raw_data_filename, 'r', encoding='utf-8') as f:
@@ -68,13 +68,25 @@ def process_and_append_tweets(raw_data_filename, cleaned_output_filename):
             tweet_result = entry.get('content', {}).get('itemContent', {}).get('tweet_results', {}).get('result', {})
             if not tweet_result: continue
 
-            creator_name = tweet_result['core']['user_results']['result']['core']['name']
+            # Extract tweet ID from entryId
+            tweet_id = entry.get('entryId', '').replace('tweet-', '')
+            
+            # Skip if tweet already exists in database
+            if db.tweet_exists(tweet_id):
+                continue
 
+            # Extract user info
+            user_result = tweet_result['core']['user_results']['result']
+            creator_name = user_result['core']['name']
+            creator_username = user_result['core']['screen_name']
+            
+            # Extract tweet content
             if 'note_tweet' in tweet_result and tweet_result.get('note_tweet', {}).get('is_expandable'):
                 content_text = tweet_result['note_tweet']['note_tweet_results']['result']['text']
             else:
                 content_text = tweet_result['legacy']['full_text']
 
+            # Extract media URL
             media_url = None
             if 'extended_entities' in tweet_result['legacy'] and 'media' in tweet_result['legacy']['extended_entities']:
                 media_item = tweet_result['legacy']['extended_entities']['media'][0]
@@ -84,22 +96,42 @@ def process_and_append_tweets(raw_data_filename, cleaned_output_filename):
                     variants = media_item.get('video_info', {}).get('variants', [])
                     best_variant = max((v for v in variants if 'bitrate' in v), key=lambda v: v['bitrate'], default=None)
                     if best_variant: media_url = best_variant.get('url')
+            
+            # Extract engagement metrics
+            legacy = tweet_result.get('legacy', {})
+            retweet_count = legacy.get('retweet_count', 0)
+            like_count = legacy.get('favorite_count', 0)
+            reply_count = legacy.get('reply_count', 0)
+            
+            # Extract view count from views field
+            view_count = 0
+            if 'views' in tweet_result and 'count' in tweet_result['views']:
+                view_count = int(tweet_result['views']['count'])
+            
+            # Extract created_at timestamp
+            created_at = legacy.get('created_at', '')
 
             newly_cleaned_tweets.append({
+                "tweet_id": tweet_id,
                 "serial_no": start_sno + len(newly_cleaned_tweets),
                 "creator_name": creator_name,
+                "creator_username": creator_username,
                 "content": content_text.strip(),
-                "media_url": media_url
+                "media_url": media_url,
+                "created_at": created_at,
+                "retweet_count": retweet_count,
+                "like_count": like_count,
+                "reply_count": reply_count,
+                "view_count": view_count
             })
-        except (KeyError, IndexError, TypeError):
+        except (KeyError, IndexError, TypeError) as e:
+            print(f"⚠️ Skipping malformed tweet entry: {e}")
             continue
 
     if newly_cleaned_tweets:
-        all_cleaned_tweets = existing_cleaned_tweets + newly_cleaned_tweets
-        with open(cleaned_output_filename, 'w', encoding='utf-8') as f:
-            json.dump(all_cleaned_tweets, f, indent=4, ensure_ascii=False)
-        print(f"✅ Processed and appended {len(newly_cleaned_tweets)} new tweets -> '{cleaned_output_filename}'")
-        return len(newly_cleaned_tweets)
+        inserted_count = db.insert_tweets_batch(newly_cleaned_tweets)
+        print(f"✅ Processed and stored {inserted_count} new tweets in database")
+        return inserted_count
     else:
-        print("✅ No new tweets to append in this batch.")
+        print("✅ No new tweets to store in this batch.")
         return 0

@@ -5,6 +5,7 @@ from seleniumwire import webdriver
 from selenium.webdriver.firefox.options import Options
 import config
 from utils import build_search_url, process_and_append_tweets
+from database import TweetDatabase
 
 class TwitterScraper:
     def __init__(self):
@@ -12,6 +13,7 @@ class TwitterScraper:
         self.processed_urls = set()
         self.total_tweets_collected = 0
         self.consecutive_empty_scrolls = 0
+        self.db = TweetDatabase()
 
     def _setup_driver(self):
         """Sets up the Selenium WebDriver."""
@@ -55,7 +57,7 @@ class TwitterScraper:
         with open(config.RAW_DATA_FILENAME, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         print(f"📝 Saved raw data to '{config.RAW_DATA_FILENAME}'")
-        new_tweets = process_and_append_tweets(config.RAW_DATA_FILENAME, config.CLEANED_DATA_FILENAME)
+        new_tweets = process_and_append_tweets(config.RAW_DATA_FILENAME)
         self.total_tweets_collected += new_tweets
         self.processed_urls.add(request.url)
 
@@ -71,7 +73,7 @@ class TwitterScraper:
                 self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 scroll_count += 1
                 print(f"\n📜 Scrolled down ({scroll_count}). Waiting for new data...")
-
+                time.sleep(2)
                 new_data_found = False
                 for request in reversed(self.driver.requests):
                     if "SearchTimeline" in request.url and request.url not in self.processed_urls:
@@ -93,10 +95,22 @@ class TwitterScraper:
             except Exception as e:
                 print(f"❌ An error occurred during the scroll loop: {e}")
 
+    def _print_database_stats(self):
+        """Prints current database statistics."""
+        stats = self.db.get_stats()
+        print(f"\n📊 Database Statistics:")
+        print(f"   Total tweets: {stats.get('total_tweets', 0)}")
+        print(f"   Unique creators: {stats.get('unique_creators', 0)}")
+        print(f"   First scraped: {stats.get('first_scraped', 'N/A')}")
+        print(f"   Last scraped: {stats.get('last_scraped', 'N/A')}")
+
     def scrape(self):
         """Main method to run the scraper."""
         search_url = build_search_url()
         self._setup_driver()
+        
+        # Print initial database state
+        self._print_database_stats()
 
         try:
             self.driver.get("https://x.com/robots.txt")
@@ -115,6 +129,10 @@ class TwitterScraper:
             if self.driver:
                 print("🔚 Closing browser.")
                 self.driver.quit()
+            
+            # Print final database state
+            print("\n🎯 Final results:")
+            self._print_database_stats()
 
 if __name__ == "__main__":
     scraper = TwitterScraper()
