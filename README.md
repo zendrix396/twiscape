@@ -42,7 +42,7 @@ RAW_DATA_FILENAME = "data.json"
 CLEANED_DATA_FILENAME = "cleaned_tweets.json"
 COOKIES_FILENAME = "cookies.json"
 LOGIN_URL = "https://x.com/login"
-MAX_TWEETS = 55
+MAX_TWEETS = 100
 MAX_EMPTY_SCROLLS = 3
 ```
 ---
@@ -51,4 +51,3 @@ Run this command to start the scraping process
 ```bash
 python main.py scrape
 ```
-
